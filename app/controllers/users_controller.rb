@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     def show
-        render json: User.find(params['id'])
+        if params['id'].class.to_s == 'String'
+            @user = User.find_by(username:params['id'])
+        elsif params['id'].class.to_s == 'Integer'
+            @user = User.find(params['id'])
+        end
+        render json: @user
     end
 
     def index
