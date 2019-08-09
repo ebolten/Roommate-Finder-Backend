@@ -9,13 +9,14 @@ class BookmarkListingsController < ApplicationController
     end
 
     def create
-        BookmarkListing.create(bookmark_params)
+        @bookmark = BookmarkListing.create(bookmark_params)
+        render json: @bookmark
     end
 
     private
 
     def bookmark_params
-        params.require(:bookmark_listing).permit(:user_id,:area_id)
+        params.require(:bookmark_listing).permit(:user_id,:listing_id)
     end
 
 end
