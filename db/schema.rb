@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_195442) do
     t.string "preferences"
     t.integer "user_id"
     t.integer "area_id"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,7 +50,8 @@ ActiveRecord::Schema.define(version: 2019_08_09_195442) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
+    t.string "looking_in", default: "no preference"
     t.string "img_url"
     t.string "desc"
     t.string "tel_num"

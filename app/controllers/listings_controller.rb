@@ -3,6 +3,10 @@ class ListingsController < ApplicationController
         render json: Listing.all
     end
 
+    def show
+        render json: Listing.find(params['id'])
+    end
+
     def new
         @listing = Listing.new
     end

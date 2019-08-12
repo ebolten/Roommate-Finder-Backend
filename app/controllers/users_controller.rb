@@ -18,13 +18,18 @@ class UsersController < ApplicationController
 
     def create
         new_user = User.create(user_params)
-        render json: new_user
+
+        if new_user.valid?
+            render json: new_user
+        else
+            render json: {error: 'failed to create user'}
+        end
     end
 
     private
 
     def user_params
-        params.require(:user).permit( :username,:password,:img_url,:desc,:tel_num,:email,:area_id )
+        params.require(:user).permit( :username,:password,:img_url,:desc,:tel_num,:email,:area_id,:price )
     end
 
 end

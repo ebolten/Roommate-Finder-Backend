@@ -6,6 +6,7 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.string :preferences
       t.integer :user_id
       t.integer :area_id
+      t.integer :price
 
       t.timestamps
     end
