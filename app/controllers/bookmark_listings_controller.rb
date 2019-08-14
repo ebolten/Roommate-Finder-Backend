@@ -1,7 +1,11 @@
 class BookmarkListingsController < ApplicationController
 
     def index
-        render json: BookmarkListing.all
+        @bookmarks = BookmarkListing.all
+
+        
+
+        render json: @bookmarks
     end
 
     def new
