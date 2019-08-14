@@ -12,7 +12,11 @@ class MessagesController < ApplicationController
     end
 
     def create
-        @message = Message.create(:content,:user_id,:listing_id)
+        @message = Message.create(message_params)
         render json: @message
+    end
+
+    def message_params
+        params.require(:message).permit(:content,:user_id,:listing_id)
     end
 end
