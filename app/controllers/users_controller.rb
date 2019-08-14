@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
     def show
-        if params['id'].class.to_s == 'String'
-            @user = User.find_by(username:params['id'])
-        elsif params['id'].class.to_s == 'Integer'
-            @user = User.find(params['id'])
-        end
+        @user = User.find_by(username:params['id'])
         render json: @user
     end
 
@@ -22,14 +18,14 @@ class UsersController < ApplicationController
         if new_user.valid?
             render json: new_user
         else
-            render json: {error: 'failed to create user'}
+            render json: {error: new_user.errors}
         end
     end
 
     private
 
     def user_params
-        params.require(:user).permit( :username,:password,:img_url,:desc,:tel_num,:email,:area_id,:price )
+        params.require(:user).permit( :username,:password_digest,:img_url,:desc,:tel_num,:email,:area_id,:price )
     end
 
 end

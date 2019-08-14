@@ -18,6 +18,6 @@ class ListingsController < ApplicationController
     private
 
     def listing_params
-        params.require(:listing).permit(:img_url,:desc,:preferences,:user_id,:area_id)
+        params.require(:listing).permit(:img_url,:desc,:preferences,:user_id,:area_id,:price)
     end
 end
