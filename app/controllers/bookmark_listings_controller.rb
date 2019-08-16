@@ -2,9 +2,6 @@ class BookmarkListingsController < ApplicationController
 
     def index
         @bookmarks = BookmarkListing.all
-
-        
-
         render json: @bookmarks
     end
 
@@ -16,6 +13,8 @@ class BookmarkListingsController < ApplicationController
         @bookmark = BookmarkListing.create(bookmark_params)
         render json: @bookmark
     end
+
+   
 
     private
 
