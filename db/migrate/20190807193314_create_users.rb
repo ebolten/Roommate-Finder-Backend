@@ -9,6 +9,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :tel_num
       t.string :email
       t.integer :area_id
+      t.string :firstname
+      t.string :lastname
 
       t.timestamps
     end

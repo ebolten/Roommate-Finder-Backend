@@ -15,6 +15,16 @@ class ListingsController < ApplicationController
         render json: @listing = Listing.create(listing_params)
     end
 
+    def edit
+        @listing = Listing.find(params['id'])
+    end
+
+    def update
+        @listing = Listing.find(params['id'])
+        @listing.update(listing_params)
+        render json:Listing.find(params['id'])
+    end
+
     private
 
     def listing_params

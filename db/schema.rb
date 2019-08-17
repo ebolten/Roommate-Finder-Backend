@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2019_08_09_195442) do
     t.string "tel_num"
     t.string "email"
     t.integer "area_id"
+    t.string "firstname"
+    t.string "lastname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
