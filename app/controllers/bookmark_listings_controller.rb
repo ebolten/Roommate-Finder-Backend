@@ -5,6 +5,10 @@ class BookmarkListingsController < ApplicationController
         render json: @bookmarks
     end
 
+    def show
+        render json: BookmarkListing.find(params['id'])
+    end
+
     def new
         BookmarkListing.new
     end
@@ -14,7 +18,11 @@ class BookmarkListingsController < ApplicationController
         render json: @bookmark
     end
 
-   
+    def destroy
+        @bookmark = BookmarkListing.find(params['id'])
+        @bookmark.destroy
+        render json: BookmarkListing.all
+    end
 
     private
 
