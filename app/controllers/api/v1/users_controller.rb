@@ -20,7 +20,9 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        new_user = User.create(user_params)
+        new_user = User.create(username:params['username'],password:params['password'],area_id:params['area_id'],
+        img_url:params['img_url'],tel_num:params['tel_num'],email:params['email'],firstname:params['firstname'],
+        lastname:params['lastname'],desc:params['desc'])
 
         if new_user.valid?
             render json: new_user
@@ -41,7 +43,7 @@ class Api::V1::UsersController < ApplicationController
       end
 
     def user_params
-        params.require(:user).permit( :username,:password_digest,:img_url,:desc,:tel_num,:email,:area_id,:firstname,:lastname )
+        params.require(:user).permit( :username,:img_url,:desc,:tel_num,:email,:area_id,:firstname,:lastname )
     end
 
 end
