@@ -59,11 +59,11 @@ Area.create(zipcode:50131,cityname:'Florence, Italy')
 Area.create(zipcode:50142,cityname:'Florence, Italy')
 
 
-User.create( username:'coolgurl',firstname:'Emily',lastname:'Bolten',password_digest:'cappello',
+User.create( username:'coolgurl',firstname:'Emily',lastname:'Bolten',password:'cappello',
     img_url:'https://www.nationalgeographic.com/content/dam/news/2018/05/17/you-can-train-your-cat/02-cat-training-NationalGeographic_1484324.jpg',desc:'I am Emily and I am looking for a roommate who likes cats as much as I do.',
     tel_num:'123-456-7890',email:'coolgurl@gmail.com',area_id:1,looking_in:'Rockville' )
 
-User.create( username:'machocamacho',firstname:'Sam',lastname:'Camacho',password_digest:'cool',
+User.create( username:'machocamacho',firstname:'Sam',lastname:'Camacho',password:'cool',
     img_url:'https://st2.depositphotos.com/3223199/8808/i/950/depositphotos_88088990-stock-photo-scottish-fold-cat-brown-tabby.jpg',desc:'I am Sam and I like carpets. I am looking for a room with carpet.',
     tel_num:'123-456-7890',email:'sam@gmail.com',area_id:1,looking_in:'Rockville'  )
 
