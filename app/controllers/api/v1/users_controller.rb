@@ -15,6 +15,16 @@ class Api::V1::UsersController < ApplicationController
         render json: User.all
     end
 
+    def edit
+        User.find_by(username:params['id'])
+    end
+
+    def update
+        @user = User.find_by(username:params['id'])
+        @user.update(user_params)
+        render json: @user
+    end
+
     def new
         User.new
     end

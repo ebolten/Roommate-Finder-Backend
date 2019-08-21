@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create,:show,:index]
+      resources :users, only: [:create,:show,:index,:edit,:update]
       post '/login', to: 'auth#create' #needs the username and password
       get '/profile', to: 'users#show' #take in the token
     end

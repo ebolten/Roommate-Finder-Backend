@@ -25,6 +25,12 @@ class ListingsController < ApplicationController
         render json:Listing.find(params['id'])
     end
 
+    def destroy
+        @listing = Listing.find(params['id'])
+        @listing.destroy
+        render json:Listing.all
+    end
+
     private
 
     def listing_params

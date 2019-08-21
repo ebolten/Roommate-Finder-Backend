@@ -79,9 +79,3 @@
 #     preferences:'No smoking inside.',user_id:1,area_id:5,price:1000 )
 
 # Listing.create(img_url:'https://i1.wp.com/www.turningleftforless.com/wp-content/uploads/2017/05/IMG_0012-2.jpg',desc:'This is a 300sqft room with carpet.',preferences:'No loud music.',user_id:2,area_id:1,price:750)
-
-
-Message.find(1).update(user_id:1)
-Message.find(3).update(user_id:7)
-Message.find(2).update(user_id:2)
-
